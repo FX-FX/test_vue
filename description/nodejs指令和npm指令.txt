@@ -1,0 +1,21 @@
+--查看版本
+npm -v
+node -v
+
+--查看global模块
+npm list -g/-global   (-g : global)
+
+--初始化
+cnpm install  （淘宝镜像）
+npm install
+
+--启动项目
+cnpm run dev (淘宝镜像)
+npm run dev
+
+--检查配置的镜像是否可用
+npm config get registry
+npm info vue
+
+
+

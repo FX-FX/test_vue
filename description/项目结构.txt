@@ -1,0 +1,13 @@
+build   --构建脚本目录
+config  --构建配置目录
+node_modules  --依赖的node工具包目录
+
+src   --原码目录
+  assets  --资源目录
+  components   --组件目录
+  App.vue   --页面级vue组件
+  main.js   --页面入口js文件
+
+static    --静态文件目录
+index.html  --入口页面
+package.json    --项目描述文件
