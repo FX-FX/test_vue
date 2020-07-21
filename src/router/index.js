@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Main from '@/components/Main'
 import Main1 from '../components/Main1'
 import PageOne from '../components/PageOne'
+import Login from '../components/Login'
 
 Vue.use(Router)
 const originalPush = Router.prototype.push
@@ -20,7 +21,7 @@ export default new Router({
       component: HelloWorld
     }
   ]*/
-  routes: [
+  /*routes: [
     {
       path: '/',
       name: '导航一',
@@ -32,6 +33,13 @@ export default new Router({
           component: PageOne
         }
       ]
+    }
+  ]*/
+  routes: [
+    {
+      path: '/',
+      name: '登录',
+      component: Login
     }
   ]
 })
