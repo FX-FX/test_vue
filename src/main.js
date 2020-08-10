@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+//导入路由文件
 import router from './router/index'
 //引入axios
 import axios from 'axios'
@@ -16,7 +17,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router, //传入router实例
   components: { App },
   template: '<App/>'
 })
