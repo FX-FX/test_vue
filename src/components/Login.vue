@@ -2,7 +2,7 @@
   <div class="login">
       <el-form :model="dataForm">
         <el-form-item prop="username">
-          <el-input v-model="dataForm.username" type="text" auto-complete="off" placeholder="账号">
+          <el-input v-model="dataForm.username" type="text" auto-complete="off" placeholder="账号" @keyup.enter.native="carriageReturn">
           </el-input>
         </el-form-item>
         <el-form-item prop="password">
@@ -10,7 +10,7 @@
             v-model="dataForm.password"
             type="password"
             auto-complete="off"
-            placeholder="密码">
+            placeholder="密码" @keyup.enter.native="carriageReturn">
           </el-input>
         </el-form-item>
         <el-form-item>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
     export default {
         name: "Login",
         data(){
@@ -34,8 +35,26 @@
         },
       methods:{
           submitForm:function() {
-            alert(JSON.stringify(this.dataForm))
+            const userName = this.dataForm.username;
+            const passWord = this.dataForm.password;
+            if(userName ==""||userName==null){
+              alert("账号不能为空ヽ(ー_ー)ノ");
+            }else {
+              if(passWord==""||passWord==null){
+                alert("密码不能为空(•́へ•́╬)");
+              }else{
+                if(userName=="admin"&&passWord=="123456"){
+                  alert("登录成功(^_−)☆")
+                  this.$router.replace('/detail');
+                }else{
+                  alert("账号或密码不正确o(▼皿▼メ;)o")
+                }
+              }
+            }
 
+          },
+          carriageReturn(){
+              this.submitForm();
           }
       }
 
@@ -50,7 +69,7 @@
     height: 100%;
     width: 500px;
     background-size: cover;
-    margin: 0 auto;
+    margin: 250px auto;
     padding: 0;
   }
   body{
